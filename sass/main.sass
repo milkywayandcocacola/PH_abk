@@ -1,0 +1,185 @@
+@import "colors"
+@import "fonts"
+/* Mixins */
+@mixin reg () 
+	font-family: Montserrat-Regular, sans-serif
+@mixin bold ()
+	font-family: Montserrat-Bold, sans-serif
+
+*
+	outline: none
+
+html
+	
+body
+	outline:none
+	font-size: 10px
+section
+	margin: 0
+	padding: 0
+	height: 100vh
+
+video
+	position: fixed
+	top: 0
+	left: 0
+	z-index: -1
+	min-width: 100%
+	min-height: 100%
+	overflow: hidden
+	filter: brightness(0.4)
+
+//menu style
+.menu
+	position: fixed
+	right: 0
+	top: 50%
+	transform: translateY(-50%)
+	z-index: 100
+	ul
+		text-align: right
+		list-style: none
+		li
+			margin: 0 10rem 2rem 0
+			position: relative
+			&:last-child
+				margin-bottom: 0
+			a
+				min-width: 100%
+				text-align: right
+				padding-right: 60px
+				display: inline-block
+				text-transform: uppercase
+				color: $light-color
+				font-size: 1.4rem
+				line-height: 1
+				text-decoration: none
+				transition: all 0.2s ease-in-out
+				//border: 1px solid white
+				&:hover
+					font-size: 3rem
+					&:after
+						background: #0000ff
+						height: 4px
+						width: 100%
+						bottom: -2px
+				&:after
+					transition: all 0.3s ease-in-out
+					content: ''
+					width: 50px
+					height: 2px
+					display: block
+					position: absolute
+					bottom: 2px
+					right: 0
+					background: $light-color
+
+
+
+			
+
+
+//main section style
+.main
+	&_section
+		position: relative
+		color: $light_color
+	
+	&_top
+		&_social-links
+			padding-left: 7rem
+		p
+			font-size: 2rem	
+		a
+			text-decoration: none
+			color: $light-color
+		i
+			font-size: 3rem
+		&_logo
+			margin: 0 auto
+			background: url(../img/logo.png) center no-repeat
+			background-size: cover
+			height: 75px
+			width: 400px
+			margin-top: 2.5rem
+		&_right
+			text-align: right
+			padding-right: 7rem
+			a
+				font-size: 2rem	
+				&:hover
+					text-shadow: 0.1rem 0.1rem 0.1rem #0000ff
+
+	&_middle
+		min-height: 78vh
+		&_content
+			margin: 44vh 0 0 10rem
+			@include reg()
+			text-transform: uppercase
+			h2
+				font-size: 3rem
+				margin: 0
+			h1
+				margin: 0.5rem 0 3rem 0	
+				@include bold()
+				font-size: 5rem	
+			h3
+				margin: 0
+				font-size: 1.6rem
+				line-height: 1.6
+			button
+				padding: 10px 10px
+				text-align: center
+				margin-top: 3rem
+				font-size: 2.4rem
+				border: 2px solid $light-color
+	&_bottom
+		a
+			text-decoration: none
+			outline: none
+			i
+				color: $light-color
+				font-size: 3rem
+		&_line
+			text-align: center
+
+.about_section
+	background: $third_color
+.button
+	text-transform: uppercase
+	background: none
+	border: none
+	&_social
+		width: 10rem
+		height: 10rem
+		position: relative
+		margin-right: 0
+		transition: all 0.3s ease-in-out
+		&:hover
+			text-shadow: 0.25rem 0.25rem 0.2rem #0000ff
+			transform: translate(-1px,-1px)
+			&:after
+				transition: all 0.3s ease-in-out
+				content: ''
+				position: absolute
+				display: block
+				top: 50%
+				left: 50%
+				transform: translate(-50%,-50%)
+				height: 5rem
+				width: 5rem
+				background-color: $light-color
+				z-index: -1
+				filter: opacity(15%)
+				border-radius: 50%
+			@keyframes .button_social::hover::after
+				0%
+					transform: scale(0)
+				50%
+					transform: scale(0.5)
+				100%
+					transform: scale(1)
+
+
+
+	
